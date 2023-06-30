@@ -59,7 +59,7 @@ public sealed class AuthMiddleware
                     TokenValidationResult tokenValidationResult = await accessTokenHandler.ValidateTokenAsync(accessToken, new TokenValidationParameters()
                     {
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = appSettings.JwtKey,
+                        IssuerSigningKey = appSettings.SigningKey,
                         ValidateIssuer = true,
                         ValidIssuer = "WikidVueServer",
                         ValidateLifetime = true,
